@@ -201,11 +201,14 @@ div#notebook {
 There is no significant difference between the population mean of the time it takes to respond in the congruent words condition ($\mu_{c}$) as compared to the incongruent words condition ($\mu_{i}$). Differing times recorded in the sample populations are due to chance.</li>
 </ul>
 $$H_{0} : \mu_{c} = \mu_{i}$$<ul>
-<li><strong>($H_{1}$) - alternative Hypothesis:</strong>
-The population mean ($\mu_{c}$) of the time taken to correctly name the ink colors when the words match the ink colors is significantly shorter than the population mean ($\mu_{i}$) for the incongruent words condition.</li>
+<li><strong>($H_{1}$) - alternative Hypothesis 1:</strong>
+The population mean ($\mu_{c}$) of the time taken to correctly name the ink colors when the words match the ink colors is significantly <strong>shorter</strong> than the population mean ($\mu_{i}$) for the incongruent words condition.</li>
 </ul>
-$$H_{1} : \mu_{c} < \mu_{i}$$<p>Because I am interested to explore whether displaying color names that differ from their colors is related to a <strong>longer</strong> reaction time, I have chosen to use a <strong>directional</strong> alternative hypothesis.</p>
-
+$$H_{1} : \mu_{c} < \mu_{i}$$<ul>
+<li><strong>($H_{2}$) - alternative Hypothesis 2:</strong>
+The population mean ($\mu_{c}$) of the time taken to correctly name the ink colors when the words match the ink colors is significantly <strong>longer</strong> than the population mean ($\mu_{i}$) for the incongruent words condition.</li>
+</ul>
+$$H_{2} : \mu_{c} > \mu_{i}$$
 </div>
 </div>
 </div>
@@ -237,7 +240,7 @@ $$H_{1} : \mu_{c} < \mu_{i}$$<p>Because I am interested to explore whether displ
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># importing the csv file into a pandas dataframe</span>
@@ -258,7 +261,7 @@ $$H_{1} : \mu_{c} < \mu_{i}$$<p>Because I am interested to explore whether displ
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div style="max-height:1000px;max-width:1500px;overflow:auto;">
@@ -319,7 +322,7 @@ $$H_{1} : \mu_{c} < \mu_{i}$$<p>Because I am interested to explore whether displ
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">stroop_stats</span> <span class="o">=</span> <span class="n">stroop_data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -334,7 +337,7 @@ $$H_{1} : \mu_{c} < \mu_{i}$$<p>Because I am interested to explore whether displ
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div style="max-height:1000px;max-width:1500px;overflow:auto;">
@@ -400,7 +403,7 @@ $$H_{1} : \mu_{c} < \mu_{i}$$<p>Because I am interested to explore whether displ
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># adding &#39;range&#39; as a second measure of variability</span>
@@ -422,7 +425,7 @@ $$H_{1} : \mu_{c} < \mu_{i}$$<p>Because I am interested to explore whether displ
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div style="max-height:1000px;max-width:1500px;overflow:auto;">
@@ -514,7 +517,7 @@ $$H_{1} : \mu_{c} < \mu_{i}$$<p>Because I am interested to explore whether displ
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -817,7 +820,7 @@ jfwNwzDyEAv+hmEYeYgFf8MwjDzEgr9hGEYeYsHfMAwjD7HgbxiGkYdY8DcMw8hDLPgbhmHkIf8P
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># using the scipy module for performing the two-tailed dependent t-test and for p-value calculations</span>
@@ -861,18 +864,18 @@ p-value for the two-tailed dependent t-test: 0.0000000410
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Since I am using a dependent sample t-test (I have only one sample population that I am testing twice), the <strong>degrees of freedom</strong> calculate as follows:</p>
-$$df = \frac{n}{2}-1$$
+<p>The <strong>degrees of freedom</strong> calculate as follows:</p>
+$$df = n-1$$
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">n</span> <span class="o">=</span> <span class="mi">24</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">n</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
 <span class="k">print</span> <span class="s">&#39;degrees of freedom:&#39;</span><span class="p">,</span> <span class="n">df</span>
 </pre></div>
 
@@ -886,7 +889,7 @@ $$df = \frac{n}{2}-1$$
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>degrees of freedom: 11
+<pre>degrees of freedom: 23
 </pre>
 </div>
 </div>
@@ -897,7 +900,7 @@ $$df = \frac{n}{2}-1$$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="k">print</span> <span class="s">&#39;RESULTS: paired t({0}) = {1}, p = {2}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">t_test_results</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">p_value</span><span class="p">)</span>
@@ -913,7 +916,7 @@ $$df = \frac{n}{2}-1$$
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>RESULTS: paired t(11) = 8.02070694411, p = 0.0000000410
+<pre>RESULTS: paired t(23) = 8.02070694411, p = 0.0000000410
 </pre>
 </div>
 </div>
@@ -927,10 +930,58 @@ $$df = \frac{n}{2}-1$$
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As we can see from comparing the calculated results of the t-value <a href="http://faculty.washington.edu/heagerty/Books/Biostatistics/TABLES/t-Tables/">this table</a>, the t-value is clearly above the
-<strong>critical t-value</strong> for p = 0.0001. $$8.02 > 5.92$$
-Therefore the differences between the two conditions can be considered (highly) <em>statistically relevant</em>.</p>
-<p>With the t-value being so much lower than the critical value, this means that the probability that eventual differences between the two tested conditions are due to chance, is below 0.01%.</p>
+<p>As we can see from comparing the calculated results of the t-value to <a href="http://www.uwe.ac.uk/hlss/llas/statistics-in-linguistics/Appenix1.pdf">this table</a> (Table A3), the t-value is clearly above the <strong>critical t-value</strong> for the commonly used p-value of 0.05 for the two-tailed dependent t-test.
+$$8.02 > 2.069$$
+Therefore the differences between the two conditions can be considered <em>statistically relevant</em>.</p>
+<p>With the t-value being acutally so much lower than the critical value, this means that the probability that eventual differences between the two tested conditions are due to chance, is below 0.01%, considering the critical t-values present in the table.</p>
+<p>Since the t-value is <strong>negative</strong>:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">t_value</span> <span class="o">=</span> <span class="n">t_test_results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">print</span> <span class="n">t_value</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>-8.02070694411
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>the significance of the result can be found on the <em>negative</em> side of the normal distribution.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>The <strong>confidence interval</strong> in this analysis is at 95%. All the results for both of the conditions were taken from the same sample population.</p>
 <hr>
 
@@ -942,7 +993,9 @@ Therefore the differences between the two conditions can be considered (highly) 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h3><p>Considering the results of the statistical test, I reject the Null-Hypothesis in favor of the alternative Hypothesis. The analysis of the data leads to the conclusion, that it takes significantly longer to identify the ink colors when the names displayed differ from the name of the ink color (incongruent names condition).</p>
+<h3 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h3><p>Considering the results of the statistical test, I reject ($H_{0}$), the Null-Hypothesis, and ($H_{2}$), the second alternative Hypothesis, in favor of ($H_{1}$), the first alternative Hypothesis. 
+This is because the results <em>showed a statistical significance</em>, while pointing to the <em>negative</em> side of the normal distribution.
+Therefore the analysis of the data leads to the conclusion, that it takes <strong>significantly longer</strong> to identify the ink colors when the names displayed differ from the name of the ink color (incongruent names condition).</p>
 <p>This is the result that I expected. However, my (very vague) assumption as to why this is the case seems to be incorrect. I thought that this lag is a result from different types of information being processed in different parts of the brain. Even though this might not be completely wrong, there are actually a few theories as to why the Stroop effect occurs:</p>
 <ul>
 <li><strong>Selective attention</strong>: proposes that recognizing colors requires more attention than reading words.</li>
@@ -997,13 +1050,11 @@ Reading the article, I felt that this is not enough in focus. Because the immine
 <li><a href="http://stattrek.com/statistics/dictionary.aspx?definition=confidence_level">http://stattrek.com/statistics/dictionary.aspx?definition=confidence_level</a></li>
 <li><a href="http://stattrek.com/statistics/dictionary.aspx?definition=Confidence_interval">http://stattrek.com/statistics/dictionary.aspx?definition=Confidence_interval</a></li>
 <li><a href="http://support.minitab.com/en-us/minitab/17/topic-library/basic-statistics-and-graphs/hypothesis-tests/basics/directional-and-nondirectional-hypotheses/">http://support.minitab.com/en-us/minitab/17/topic-library/basic-statistics-and-graphs/hypothesis-tests/basics/directional-and-nondirectional-hypotheses/</a></li>
-<li><a href="https://www.quora.com/How-can-one-interpret-a-negative-t-value-in-a-student-test-p-value-is-very-low">https://www.quora.com/How-can-one-interpret-a-negative-t-value-in-a-student-test-p-value-is-very-low</a></li>
-<li><a href="http://www.csic.cornell.edu/Elrod/t-test/reporting-t-test.html">http://www.csic.cornell.edu/Elrod/t-test/reporting-t-test.html</a></li>
+<li><a href="http://www2.le.ac.uk/offices/ld/resources/numerical-data/variability">http://www2.le.ac.uk/offices/ld/resources/numerical-data/variability</a></li>
 </ul>
 <p><strong>t-tests</strong>:</p>
 <ul>
 <li><a href="http://www.andrewgray.com/teachers/ttests.htm">http://www.andrewgray.com/teachers/ttests.htm</a></li>
-<li><a href="http://www2.le.ac.uk/offices/ld/resources/numerical-data/variability">http://www2.le.ac.uk/offices/ld/resources/numerical-data/variability</a></li>
 <li><a href="https://explorable.com/students-t-test">https://explorable.com/students-t-test</a></li>
 <li><a href="http://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_rel.html#scipy.stats.ttest_rel">http://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_rel.html#scipy.stats.ttest_rel</a></li>
 <li><a href="http://stackoverflow.com/questions/13404468/t-test-in-pandas-python">http://stackoverflow.com/questions/13404468/t-test-in-pandas-python</a></li>
@@ -1012,6 +1063,12 @@ Reading the article, I felt that this is not enough in focus. Because the immine
 <li><a href="http://support.minitab.com/en-us/minitab/17/topic-library/basic-statistics-and-graphs/hypothesis-tests/basics/null-and-alternative-hypotheses/">http://support.minitab.com/en-us/minitab/17/topic-library/basic-statistics-and-graphs/hypothesis-tests/basics/null-and-alternative-hypotheses/</a></li>
 <li><a href="http://www.statisticshowto.com/when-to-use-a-t-score-vs-z-score/">http://www.statisticshowto.com/when-to-use-a-t-score-vs-z-score/</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Student%27s_t-test#Unpaired_and_paired_two-sample_t-tests">https://en.wikipedia.org/wiki/Student%27s_t-test#Unpaired_and_paired_two-sample_t-tests</a></li>
+<li><a href="https://www.quora.com/How-can-one-interpret-a-negative-t-value-in-a-student-test-p-value-is-very-low">https://www.quora.com/How-can-one-interpret-a-negative-t-value-in-a-student-test-p-value-is-very-low</a></li>
+<li><a href="http://www.csic.cornell.edu/Elrod/t-test/reporting-t-test.html">http://www.csic.cornell.edu/Elrod/t-test/reporting-t-test.html</a></li>
+<li><a href="http://www.statstutor.ac.uk/resources/uploaded/paired-t-test.pdf">http://www.statstutor.ac.uk/resources/uploaded/paired-t-test.pdf</a></li>
+<li><a href="http://www.psychstat.missouristate.edu/introbook/sbk25.htm">http://www.psychstat.missouristate.edu/introbook/sbk25.htm</a></li>
+<li><a href="http://www.uwe.ac.uk/hlss/llas/statistics-in-linguistics/Appenix1.pdf">http://www.uwe.ac.uk/hlss/llas/statistics-in-linguistics/Appenix1.pdf</a></li>
+<li><a href="http://www.statstutor.ac.uk/resources/uploaded/paired-t-test.pdf">http://www.statstutor.ac.uk/resources/uploaded/paired-t-test.pdf</a></li>
 </ul>
 <p><strong>python</strong>:</p>
 <ul>
@@ -1031,6 +1088,19 @@ Reading the article, I felt that this is not enough in focus. Because the immine
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
 </div>
     </div>
   </div>
